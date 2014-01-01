@@ -18,13 +18,14 @@
 		FD3CFB1418708E1A00802731 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD3CFB1218708E1A00802731 /* Main_iPad.storyboard */; };
 		FD3CFB1718708E1A00802731 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CFB1618708E1A00802731 /* ViewController.m */; };
 		FD3CFB1A18708E1A00802731 /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CFB1918708E1A00802731 /* MyScene.m */; };
-		FD3CFB1C18708E1A00802731 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = FD3CFB1B18708E1A00802731 /* Spaceship.png */; };
 		FD3CFB1E18708E1A00802731 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD3CFB1D18708E1A00802731 /* Images.xcassets */; };
 		FD3CFB2518708E1A00802731 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CFB2418708E1A00802731 /* XCTest.framework */; };
 		FD3CFB2618708E1A00802731 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CFAFB18708E1A00802731 /* Foundation.framework */; };
 		FD3CFB2718708E1A00802731 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3CFAFF18708E1A00802731 /* UIKit.framework */; };
 		FD3CFB2F18708E1A00802731 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FD3CFB2D18708E1A00802731 /* InfoPlist.strings */; };
 		FD3CFB3118708E1A00802731 /* SpriteKitButtonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CFB3018708E1A00802731 /* SpriteKitButtonTests.m */; };
+		FD3CFB3C1870904F00802731 /* SpriteKitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FD3CFB3B1870904F00802731 /* SpriteKitButton.m */; };
+		FD3CFB3E187094F100802731 /* stretchable_button.png in Resources */ = {isa = PBXBuildFile; fileRef = FD3CFB3D187094F100802731 /* stretchable_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,13 +56,15 @@
 		FD3CFB1618708E1A00802731 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		FD3CFB1818708E1A00802731 /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		FD3CFB1918708E1A00802731 /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		FD3CFB1B18708E1A00802731 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		FD3CFB1D18708E1A00802731 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FD3CFB2318708E1A00802731 /* SpriteKitButtonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpriteKitButtonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD3CFB2418708E1A00802731 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FD3CFB2C18708E1A00802731 /* SpriteKitButtonTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpriteKitButtonTests-Info.plist"; sourceTree = "<group>"; };
 		FD3CFB2E18708E1A00802731 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FD3CFB3018708E1A00802731 /* SpriteKitButtonTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpriteKitButtonTests.m; sourceTree = "<group>"; };
+		FD3CFB3A1870904F00802731 /* SpriteKitButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpriteKitButton.h; sourceTree = "<group>"; };
+		FD3CFB3B1870904F00802731 /* SpriteKitButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpriteKitButton.m; sourceTree = "<group>"; };
+		FD3CFB3D187094F100802731 /* stretchable_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stretchable_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,15 +126,17 @@
 		FD3CFB0318708E1A00802731 /* SpriteKitButton */ = {
 			isa = PBXGroup;
 			children = (
+				FD3CFB3D187094F100802731 /* stretchable_button.png */,
 				FD3CFB0C18708E1A00802731 /* AppDelegate.h */,
 				FD3CFB0D18708E1A00802731 /* AppDelegate.m */,
 				FD3CFB0F18708E1A00802731 /* Main_iPhone.storyboard */,
 				FD3CFB1218708E1A00802731 /* Main_iPad.storyboard */,
 				FD3CFB1518708E1A00802731 /* ViewController.h */,
 				FD3CFB1618708E1A00802731 /* ViewController.m */,
+				FD3CFB3A1870904F00802731 /* SpriteKitButton.h */,
+				FD3CFB3B1870904F00802731 /* SpriteKitButton.m */,
 				FD3CFB1818708E1A00802731 /* MyScene.h */,
 				FD3CFB1918708E1A00802731 /* MyScene.m */,
-				FD3CFB1B18708E1A00802731 /* Spaceship.png */,
 				FD3CFB1D18708E1A00802731 /* Images.xcassets */,
 				FD3CFB0418708E1A00802731 /* Supporting Files */,
 			);
@@ -243,10 +248,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD3CFB1C18708E1A00802731 /* Spaceship.png in Resources */,
 				FD3CFB1E18708E1A00802731 /* Images.xcassets in Resources */,
 				FD3CFB1418708E1A00802731 /* Main_iPad.storyboard in Resources */,
 				FD3CFB1118708E1A00802731 /* Main_iPhone.storyboard in Resources */,
+				FD3CFB3E187094F100802731 /* stretchable_button.png in Resources */,
 				FD3CFB0818708E1A00802731 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +274,7 @@
 				FD3CFB1A18708E1A00802731 /* MyScene.m in Sources */,
 				FD3CFB1718708E1A00802731 /* ViewController.m in Sources */,
 				FD3CFB0E18708E1A00802731 /* AppDelegate.m in Sources */,
+				FD3CFB3C1870904F00802731 /* SpriteKitButton.m in Sources */,
 				FD3CFB0A18708E1A00802731 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -490,6 +496,7 @@
 				FD3CFB3618708E1A00802731 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD3CFB3718708E1A00802731 /* Build configuration list for PBXNativeTarget "SpriteKitButtonTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +505,7 @@
 				FD3CFB3918708E1A00802731 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
