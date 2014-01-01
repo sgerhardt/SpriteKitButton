@@ -82,13 +82,19 @@ static CGFloat screenHeight;
                                       (screenHeight-(ht*buttonCount)-(pad*buttonCount))
                                       -(ht+[UIApplication sharedApplication].statusBarFrame.size.height))];
         
-        
         //Set the label node as a child of the button so that text appears
         //in front of button.
         SKLabelNode *buttonText = [SKLabelNode labelNodeWithFontNamed:font];
         [buttonText setText:text];
+        
         [buttonText setFontSize:fontSize];
+        
+        //Position the text in the middle of the button
+        //TODO: Find why the y-value has to be set negative to center the image...
+        [buttonText setPosition:(CGPointMake(0, -5))];
+        
         [self addChild:buttonText];
+        
     }
     buttonCount++;
     NSLog(@"%d", buttonCount);

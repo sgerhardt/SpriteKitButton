@@ -18,6 +18,7 @@
         
         self.backgroundColor = [SKColor blackColor];
         
+        
         SpriteKitButton *myButton = [[SpriteKitButton alloc] initWithTexture:@"stretchable_button"
                                                                         text:@"Button 1"
                                                                         font:@"Arial"

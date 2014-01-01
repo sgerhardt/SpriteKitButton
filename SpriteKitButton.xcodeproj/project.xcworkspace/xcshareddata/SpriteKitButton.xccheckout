@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>87C3F1AC-CEE1-4617-9A3F-21474EDFDCEB</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SpriteKitButton</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>060A680A-5AC2-4EA1-BCF4-B934D30EB95B</key>
+		<string>https://github.com/sgerhardt/SpriteKitButton.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SpriteKitButton.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>060A680A-5AC2-4EA1-BCF4-B934D30EB95B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sgerhardt/SpriteKitButton.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>060A680A-5AC2-4EA1-BCF4-B934D30EB95B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>060A680A-5AC2-4EA1-BCF4-B934D30EB95B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SpriteKitButton</string>
+		</dict>
+	</array>
+</dict>
+</plist>
