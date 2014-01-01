@@ -42,6 +42,15 @@
               height:(int)height
              padding:(int)padding;
 
+//Init method for a button with given texture and label
+-(id)initWithTexture:(NSString *)imageName
+                text:txt
+                font:ft;
+
+//Overrides the init method with default values for all arguments but the texture.
+-(id)initWithTexture:(NSString *)imageName;
+
+//Instance variables
 @property (nonatomic, strong) NSString *imageName;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSString *font;

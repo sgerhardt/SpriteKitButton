@@ -17,6 +17,7 @@
 @end
 @implementation SpriteKitButton
 
+//Instance variables
 @synthesize imageName;
 @synthesize text;
 @synthesize font;
@@ -96,7 +97,7 @@ static CGFloat screenHeight;
     return self;
 }
 
-//Overrides the init method to
+//Overrides the init method
 //with default values for all arguments but the texture.
 -(id)initWithTexture:(NSString*) imgName{
     
@@ -116,9 +117,10 @@ static CGFloat screenHeight;
                          padding:0];
 }
 
-//Create a button with given texture and label
+//Init method for a button with given texture and label
 -(id)initWithTexture:(NSString*) imgName
                 text:txt
+                font:ft
 {
     
     [self setScreenDimensions];
@@ -128,7 +130,7 @@ static CGFloat screenHeight;
     //Call the designated initializer using using defaults for unspecified values
     return [self initWithTexture:imgName
                             text:txt
-                            font:font
+                            font:ft
                         fontSize:fontSize
                            color:SKColor.whiteColor
                 colorBlendFactor:0

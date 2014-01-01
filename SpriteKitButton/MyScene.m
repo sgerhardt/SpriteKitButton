@@ -18,13 +18,6 @@
         
         self.backgroundColor = [SKColor blackColor];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        //[myLabel text[@"Hello World!!!"]];
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
         SpriteKitButton *myButton = [[SpriteKitButton alloc] initWithTexture:@"stretchable_button"
                                                                         text:@"Button 1"
                                                                         font:@"Arial"
