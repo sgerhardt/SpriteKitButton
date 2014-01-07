@@ -28,7 +28,8 @@
                                                                       widght:100
                                                                       height:30
                                                                      padding:10];
-        
+        //Name used to identify touch events
+        [myButton setName:@"myButton"];
         [self addChild:myButton];
         
         
@@ -41,6 +42,7 @@
                                                                       widght:100
                                                                       height:30
                                                                      padding:10];
+        [myButton2 setName:@"myButton2"];
         [self addChild:myButton2];
         
         SpriteKitButton *myButton3 = [[SpriteKitButton alloc]initWithTexture:@"stretchable_button"
@@ -52,6 +54,7 @@
                                                                       widght:100
                                                                       height:30
                                                                      padding:10];
+        [myButton3 setName:@"myButton3"];
         [self addChild:myButton3];
         
         SpriteKitButton *myButton4 = [[SpriteKitButton alloc]initWithTexture:@"stretchable_button"
@@ -63,6 +66,7 @@
                                                                       widght:100
                                                                       height:30
                                                                      padding:10];
+        [myButton4 setName:@"myButton4"];
         [self addChild:myButton4];
  
         SpriteKitButton *myButton5 = [[SpriteKitButton alloc]initWithTexture:@"stretchable_button"
@@ -74,6 +78,7 @@
                                                                       widght:100
                                                                       height:30
                                                                      padding:10];
+        [myButton5 setName:@"myButton5"];
         [self addChild:myButton5];
         
     }
@@ -82,20 +87,33 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     /* Called when a touch begins */
-    
-//    for (UITouch *touch in touches) {
-//        CGPoint location = [touch locationInNode:self];
-//        
-//        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-//        
-//        sprite.position = location;
-//        
-//        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-//        
-//        [sprite runAction:[SKAction repeatActionForever:action]];
-//        
-//        [self addChild:sprite];
-//    }
+
+    for (UITouch *touch in touches) {
+        
+        CGPoint location = [touch locationInNode:self];
+        
+        SKNode *node = [self nodeAtPoint:location];
+        
+        //If button touched, do custom action here...
+        if ([node.name isEqualToString:@"myButton"]) {
+            //do whatever...
+            NSLog(@"MyButton has been touched!");
+        }
+        else if ([node.name isEqualToString:@"myButton2"]) {
+            NSLog(@"MyButton2 has been touched!");
+        }
+        else if ([node.name isEqualToString:@"myButton3"]) {
+            NSLog(@"MyButton3 has been touched!");
+        }
+        else if ([node.name isEqualToString:@"myButton4"]) {
+            NSLog(@"MyButton4 has been touched!");
+        }
+        else if ([node.name isEqualToString:@"myButton5"]) {
+            NSLog(@"MyButton5 has been touched!");
+        }
+        
+        
+    }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
