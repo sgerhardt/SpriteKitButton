@@ -17,7 +17,9 @@
         /* Setup your scene here */
         
         self.backgroundColor = [SKColor blackColor];
-        
+
+        //Set the initial position to start building buttons from
+        [SpriteKitButton startPosition:Mid];
         
         SpriteKitButton *myButton = [[SpriteKitButton alloc] initWithTexture:@"stretchable_button"
                                                                         text:@"Button 1"
@@ -31,7 +33,6 @@
         //Name used to identify touch events
         [myButton setName:@"myButton"];
         [self addChild:myButton];
-        
         
         SpriteKitButton *myButton2 = [[SpriteKitButton alloc]initWithTexture:@"stretchable_button"
                                                                         text:@"Button 2"
@@ -68,7 +69,7 @@
                                                                      padding:10];
         [myButton4 setName:@"myButton4"];
         [self addChild:myButton4];
- 
+        
         SpriteKitButton *myButton5 = [[SpriteKitButton alloc]initWithTexture:@"stretchable_button"
                                                                         text:@"Button 5"
                                                                         font:@"Chalkduster"

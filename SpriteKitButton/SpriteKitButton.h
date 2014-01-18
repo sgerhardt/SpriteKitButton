@@ -10,10 +10,6 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface TheClass : NSObject
-+ (int)buttonCount;
-@end
-
 @interface SpriteKitButton : SKSpriteNode{
     NSString *imageName;
     NSString *text;
@@ -25,6 +21,26 @@
     int width;
     int padding;
 }
+
+typedef enum startPositionTypes
+{
+    TopLeft,
+    TopRight,
+    TopMid,
+    Mid,
+    MidLeft,
+    MidRight
+}StartPosition;
+
+//Set screen dimensions for device
++ (void)setScreenDimensions;
+
+//The starting position from which to create buttons
++ (void)startPosition:(StartPosition)pos;
+
++(void)startPositionX:(int)x;
+
++(void)startPositionY:(int)y;
 
 /*
  *  The designated Initializer. 
@@ -49,6 +65,7 @@
 
 //Overrides the init method with default values for all arguments but the texture.
 -(id)initWithTexture:(NSString *)imageName;
+
 
 //Instance variables
 @property (nonatomic, strong) NSString *imageName;

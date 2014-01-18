@@ -10,6 +10,18 @@
 //
 
 #import "SpriteKitButton.h"
+
+//Counts number of buttons so that they can be placed
+//seqeuntially on the screen - if no position is explicitly given
+static int buttonCount = 0;
+
+//Screen dimension variables
+static CGRect screenBound;
+static CGSize screenSize;
+static CGFloat screenWidth;
+static CGFloat screenHeight;
+
+
 @interface SpriteKitButton()
 {
 
@@ -28,13 +40,9 @@
 @synthesize height;
 @synthesize padding;
 
-//Counts number of buttons so that they can be placed seqeuntially on the screen - if no position is explicitly given
-static int buttonCount = 0;
+static int startPositionX;
+static int startPositionY;
 
-static CGRect screenBound;
-static CGSize screenSize;
-static CGFloat screenWidth;
-static CGFloat screenHeight;
 
 - (id)initWithTexture:(NSString *)imgName
                  text:(NSString *)txt
@@ -75,13 +83,34 @@ static CGFloat screenHeight;
         [self setHeight:ht];
         [self setSize:CGSizeMake(wid, ht)];
         
-        //Position button on screen
-        //Start buttons below status bar
-        [self setScreenDimensions];
-        [self setPosition:CGPointMake(screenWidth/2,
-                                      (screenHeight-(ht*buttonCount)-(pad*buttonCount))
-                                      -(ht+[UIApplication sharedApplication].statusBarFrame.size.height))];
+        if (buttonCount == 0)
+        {
+        [SpriteKitButton setScreenDimensions];
+        }
         
+        //If no padding is specified, position buttons to fill entire screen,
+        //with equal padding between top, bottom and adjacent buttons
+        if (pad == 0)
+        {
+            //TODO
+            if(buttonCount==0)
+            {
+                [self setPosition:CGPointMake(screenWidth/2, screenHeight/2)];
+            }
+            else
+            {
+                [self setPosition:CGPointMake(screenWidth/2,
+                                             (screenHeight-(ht*buttonCount)-(buttonCount)))];
+            }
+        }
+        else
+        {
+            //Position button on screen
+            //Start buttons below status bar
+            [self setPosition:CGPointMake(startPositionX,
+                                          (startPositionY-(ht*buttonCount)-(pad*buttonCount))
+                                          -(ht+[UIApplication sharedApplication].statusBarFrame.size.height))];
+        }
         //Set the label node as a child of the button so that text appears
         //in front of button.
         SKLabelNode *buttonText = [SKLabelNode labelNodeWithFontNamed:font];
@@ -97,7 +126,7 @@ static CGFloat screenHeight;
         
     }
     buttonCount++;
-    NSLog(@"%d", buttonCount);
+    NSLog(@"Button Count: %d", buttonCount);
     
     //Return the address of the newly initialized object
     return self;
@@ -105,9 +134,7 @@ static CGFloat screenHeight;
 
 //Overrides the init method
 //with default values for all arguments but the texture.
--(id)initWithTexture:(NSString*) imgName{
-    
-    [self setScreenDimensions];
+-(id)initWithTexture:(NSString*) imgName{		
     
     UIImage *img = [UIImage imageNamed:imgName];
     
@@ -129,8 +156,6 @@ static CGFloat screenHeight;
                 font:ft
 {
     
-    [self setScreenDimensions];
-    
     UIImage *img = [UIImage imageNamed:imgName];
     
     //Call the designated initializer using using defaults for unspecified values
@@ -148,11 +173,60 @@ static CGFloat screenHeight;
 //Set screen dimensions.
 //This is used to gauge how big the buttons should be
 //and their position if not explicitly stated.
--(void)setScreenDimensions{
++(void)setScreenDimensions{
     screenBound = [[UIScreen mainScreen] bounds];
     screenSize = screenBound.size;
     screenWidth = screenSize.width;
-    screenHeight = screenSize.height;
+    screenHeight = screenSize.height;	
+}
+
+
+//Set the X and Y starting position
++(void)startPosition:(StartPosition) pos
+{
+    [SpriteKitButton setScreenDimensions];
+    
+    switch(pos)
+    {
+        case TopLeft:
+            startPositionX = screenWidth/4;
+            startPositionY = screenHeight-[UIApplication sharedApplication].statusBarFrame.size.height;
+            break;
+        case TopRight:
+            startPositionX = screenWidth/1.5;
+            startPositionY = screenHeight-[UIApplication sharedApplication].statusBarFrame.size.height;
+            break;
+        case TopMid:
+            startPositionX = screenWidth/2;
+            startPositionY = screenHeight-[UIApplication sharedApplication].statusBarFrame.size.height;
+            break;
+        case Mid:
+            startPositionX = screenWidth/2;
+            startPositionY = screenHeight/2;
+            break;
+        case MidLeft:
+            startPositionX = screenWidth/4;
+            startPositionY = screenHeight/2;
+            break;
+        case MidRight:
+            startPositionX = screenWidth/4;
+            startPositionY = screenHeight/2;
+            break;
+        default:
+            break;
+    }
+    
+}
+
+//Set the starting X position
++(void)startPositionX:(int)x
+{
+    startPositionX = x;
+}
+//Set the starting Y position
++(void)startPositionY:(int)y
+{
+    startPositionY = y;
 }
 
 
