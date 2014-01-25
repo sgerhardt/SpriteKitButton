@@ -10,5 +10,6 @@ bottom in the order they are created - pending any other explicitly positioned b
 Padding can be specified to give more spacing between buttons.
 
 TODO: 
-1.Find better images to use for button textures and incorparte some examples of using the centerRect property.
-2.Change button shading on touch event.
+1.Fix issue of nodes not displaying when screen is horizontal when app is launched
+2.Find better images to use for button textures and incorparte some examples of using the centerRect property.
+
