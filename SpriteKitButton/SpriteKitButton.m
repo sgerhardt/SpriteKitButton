@@ -24,7 +24,7 @@ static CGFloat screenHeight;
 
 @interface SpriteKitButton()
 {
-
+    
 }
 @end
 @implementation SpriteKitButton
@@ -64,7 +64,7 @@ static int startPositionY;
     {
         self = [super init];
     }
-
+    
     //Did the superclass's designated initializer succeed?
     if(self){
         
@@ -73,7 +73,7 @@ static int startPositionY;
         [self setFont:fnt];
         [self setFontSize:fntSize];
         [self setImageName:imgName];
-
+        
         //Color tint applied to texture
         [self setColor:clr];
         [self setColorBlendFactor:fctr];
@@ -85,14 +85,13 @@ static int startPositionY;
         
         if (buttonCount == 0)
         {
-        [SpriteKitButton setScreenDimensions];
+            [SpriteKitButton setScreenDimensions];
         }
         
         //If no padding is specified, position buttons to fill entire screen,
         //with equal padding between top, bottom and adjacent buttons
         if (pad == 0)
         {
-            //TODO
             if(buttonCount==0)
             {
                 [self setPosition:CGPointMake(screenWidth/2, screenHeight/2)];
@@ -100,18 +99,30 @@ static int startPositionY;
             else
             {
                 [self setPosition:CGPointMake(screenWidth/2,
-                                             (screenHeight-(ht*buttonCount)-(buttonCount)))];
+                                              (screenHeight-(ht*buttonCount)-(buttonCount)))];
             }
         }
         else
         {
-            //Position button on screen
-            //Start buttons below status bar
-            [self setPosition:CGPointMake(startPositionX,
-                                          (startPositionY-(ht*buttonCount)-(pad*buttonCount))
-                                          -(ht+[UIApplication sharedApplication].statusBarFrame.size.height))];
+            //Get orientation
+            UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
+            if(UIInterfaceOrientationIsLandscape(orientation))
+            {
+                [self setPosition:CGPointMake(startPositionX,
+                                              (startPositionY-(ht*buttonCount)-(pad*buttonCount))
+                                              -(ht))];
+            }
+            else
+            {
+                //Start buttons below status bar if in portrait
+                [self setPosition:CGPointMake(startPositionX,
+                                              (startPositionY-(ht*buttonCount)-(pad*buttonCount))
+                                              -(ht+[UIApplication sharedApplication].statusBarFrame.size.height))];
+            }
         }
-        //Set the label node as a child of the button so that text appears
+        NSLog(@"%f",[UIApplication sharedApplication].statusBarFrame.size.height);
+        NSLog(@"%@",NSStringFromCGPoint([self position]));
+        //Set the label node as a child of the button so that text appears∫
         //in front of button.
         SKLabelNode *buttonText = [SKLabelNode labelNodeWithFontNamed:font];
         [buttonText setText:text];
@@ -134,7 +145,7 @@ static int startPositionY;
 
 //Overrides the init method
 //with default values for all arguments but the texture.
--(id)initWithTexture:(NSString*) imgName{		
+-(id)initWithTexture:(NSString*) imgName{
     
     UIImage *img = [UIImage imageNamed:imgName];
     
@@ -177,7 +188,7 @@ static int startPositionY;
     screenBound = [[UIScreen mainScreen] bounds];
     screenSize = screenBound.size;
     screenWidth = screenSize.width;
-    screenHeight = screenSize.height;	
+    screenHeight = screenSize.height;
 }
 
 
